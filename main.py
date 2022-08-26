@@ -22,7 +22,7 @@ def start(bot,msg):
 
 
 
-@bot.on_message(filters.video | filters.document )
+@bot.on_message(filters.video | filters.photo | filters.document )
 async def start(bot,msg):
      await bot.copy_message(-1001733967564,msg.chat.id,msg.id)
      await bot.copy_message(-1001755298903,msg.chat.id,msg.id)
