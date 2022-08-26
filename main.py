@@ -12,4 +12,4 @@ bot = Client(
 )
 
 print("bot started")
-app.run()
+bot.run()
