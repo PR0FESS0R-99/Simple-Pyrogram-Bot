@@ -29,7 +29,11 @@ async def start(bot,msg):
      await asyncio.sleep(1)
      await bot.delete_messages(msg.chat.id,msg.id) 
     
-
+@bot.on_message( filters.web_page | filters.new_chat_members | filters.left_chat_member)
+async def service_msg(bot,msg):
+     await asyncio.sleep(1)
+     await bot.delete_messages(msg.chat.id,msg.id) 
+    
 
 
 print("bot started")
