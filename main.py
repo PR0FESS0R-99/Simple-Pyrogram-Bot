@@ -1,4 +1,4 @@
-from pyrogram import Client, filter
+from pyrogram import Client, filters
 
 
 api_id = 13503794
