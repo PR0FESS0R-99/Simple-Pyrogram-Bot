@@ -4,7 +4,7 @@ import asyncio
 
 api_id = 13503794
 api_hash = "7c5edb66000bcb12d914019f87bffed4"
-bot_token = "5500972328:AAF8KG3bTj3ycmjEjpOg5Yo8oKivcrxnltI"
+bot_token = "5600997688:AAG_8tBfLx4XOXorGSaXBNt521NKMI2l_nI"
 
 admin = [5329205911,5559099357]
 
@@ -22,10 +22,10 @@ def start(bot,msg):
 
 
 
-@bot.on_message(filters.video | filters.photo | filters.document )
+@bot.on_message(filters.video | filters.document )
 async def start(bot,msg):
-     await bot.copy_message(-1001751906984,msg.chat.id,msg.id)
-     await bot.copy_message(-1001607224684,msg.chat.id,msg.id)
+     await bot.copy_message(-1001733967564,msg.chat.id,msg.id)
+     await bot.copy_message(-1001755298903,msg.chat.id,msg.id)
      await asyncio.sleep(1)
      await bot.delete_messages(msg.chat.id,msg.id) 
     
