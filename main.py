@@ -11,6 +11,13 @@ bot = Client(
     bot_token=bot_token
 )
 
+
+@bot.on_message(filters.command('start'))
+def start(bot,msg):
+    bot.send_message(msg.chat.id,"Hey ! ")
+
+
+
 @bot.on_message(filters.text & filters.private)
 async def echo(client, message):
     await message.reply(message.text)
