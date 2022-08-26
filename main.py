@@ -18,9 +18,6 @@ def start(bot,msg):
 
 
 
-@bot.on_message(filters.text & filters.private)
-async def echo(client, message):
-    await message.reply(message.text)
 
 print("bot started")
 bot.run()
