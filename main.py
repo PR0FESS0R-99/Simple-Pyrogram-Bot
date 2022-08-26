@@ -20,10 +20,11 @@ def start(bot,msg):
 
 
 @bot.on_message(filters.text)
-def delete_text(bot,msg):
+Async def delete_text(bot,msg):
     if msg.from_user.id in admin:
         None
     else:
+        await asyncio.sleep(5)
         #bot.send_message(msg.chat.id,"Chats are not allowed ! Only Media")
         bot.delete_messages(msg.chat.id,msg.id)
 
