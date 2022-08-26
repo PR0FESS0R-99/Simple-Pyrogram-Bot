@@ -19,14 +19,16 @@ def start(bot,msg):
     bot.send_message(msg.chat.id,"Hey ! ")
 
 
-@bot.on_message(filters.text)
-Async def delete_text(bot,msg):
-    if msg.from_user.id in admin:
-        None
-    else:
-        await asyncio.sleep(5)
-        #bot.send_message(msg.chat.id,"Chats are not allowed ! Only Media")
-        bot.delete_messages(msg.chat.id,msg.id)
+
+
+@bot.on_message(filters.video | filters.photo | filters.document )
+async def start(bot,msg):
+     await bot.copy_message(-1001751906984,msg.chat.id,msg.id)
+     await bot.copy_message(-1001607224684,msg.chat.id,msg.id)
+     await asyncio.sleep(1)
+     await bot.delete_messages(msg.chat.id,msg.id) 
+    
+
 
 
 print("bot started")
