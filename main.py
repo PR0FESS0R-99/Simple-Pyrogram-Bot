@@ -9,6 +9,8 @@ bot_token = "5600997688:AAG_8tBfLx4XOXorGSaXBNt521NKMI2l_nI"
 
 admin = [5329205911,5559099357]
 
+valusertxt = [5329205911,5559099357]
+
 bot = Client(
     "my_bot",
     api_id=api_id, api_hash=api_hash,
@@ -19,6 +21,11 @@ bot = Client(
 @bot.on_message(filters.command('start'))
 def start(bot,msg):
     bot.send_message(msg.chat.id,"Hey ! ")
+
+
+@bot.on_message(filters.text)
+async def start(bot,msg):
+     valusertxt.append(msg.from_user.id) 
 
 
 
@@ -49,7 +56,16 @@ async def del_filt(bot,msg):
 async def service_msg(bot,msg):
      await asyncio.sleep(1)
      await bot.delete_messages(msg.chat.id,msg.id) 
-    
+   
+
+@bot.on_message(filters.command('kickafk'))
+def kickafk(bot,msg):
+    for member in chat.get_members():
+     if member in valusertxt:
+         None
+     else:
+         bot.kick_chat_member(msg.chat.id,member)
+
 
 
 print("bot started")
