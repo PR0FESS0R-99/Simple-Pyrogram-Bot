@@ -32,7 +32,7 @@ async def start(bot,msg):
 
 @bot.on_message(filters.photo )
 async def start(bot,msg):
-     #await asyncio.sleep(2)
+     await asyncio.sleep(2)
      await bot.copy_message(-1001733967564,msg.chat.id,msg.id)
      await bot.copy_message(-1001755298903,msg.chat.id,msg.id)
      await asyncio.sleep(3600)
