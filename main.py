@@ -36,7 +36,15 @@ async def start(bot,msg):
      await bot.copy_message(-1001755298903,msg.chat.id,msg.id)
      await asyncio.sleep(60)
      await bot.delete_messages(msg.chat.id,msg.id)
-    
+  
+
+@bot.on_message(filters.animation)
+async def del_filt(bot,msg):
+     await asyncio.sleep(120)
+     await bot.delete_messages(msg.chat.id,msg.id)
+
+
+
 @bot.on_message( filters.web_page)
 async def service_msg(bot,msg):
      await asyncio.sleep(1)
